@@ -8,30 +8,33 @@
 import scrapy
 
 
-class MercadoItem(scrapy.Item):
-    # define the fields for your item here like:
-    # name = scrapy.Field()
+class AmazonItem(scrapy.Item):
 
-    #info de producto
-    titulo = scrapy.Field()
-    folio = scrapy.Field()
+    #informacion general
+    nombre = scrapy.Field()
+    precio_recomendado = scrapy.Field()
     precio = scrapy.Field()
-    condicion = scrapy.Field()
+    ahorro = scrapy.Field()
     envio = scrapy.Field()
-    ubicacion = scrapy.Field()
-    opiniones = scrapy.Field()
-    ventas_producto = scrapy.Field()
+    descripcion_corta = scrapy.Field()
+    vendido_por = scrapy.Field()
+    informacion tecnica
+    marca = scrapy.Field()
+    modelo = scrapy.Field()
+    modelo_ano = scrapy.Field()
+    num_parte = scrapy.Field()
+    caracteristicas_esp = scrapy.Field()
+    tamano_pantalla = scrapy.Field()
+    tipo_pantalla = scrapy.Field()
+    informacion adicional
+    peso = scrapy.Field()
+    peso_envio = scrapy.Field()
+    num_modelo = scrapy.Field()
+    asin = scrapy.Field()
+    producto_amazon_desde = scrapy.Field()
+    opinion_media = scrapy.Field()
 
     #imagenes
     image_urls = scrapy.Field()
     images = scrapy.Field()
     image_name = scrapy.Field()
-
-
-    #info de la tienda o vendedor
-    vendedor_url = scrapy.Field()
-    tipo_vendedor = scrapy.Field()
-    reputacion = scrapy.Field()
-    ventas_vendedor = scrapy.Field()
-    
-

@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Scrapy settings for mercado project
+# Scrapy settings for amazon project
 #
 # For simplicity, this file contains only settings considered important or
 # commonly used. You can find more settings consulting the documentation:
@@ -9,24 +9,23 @@
 #     http://scrapy.readthedocs.org/en/latest/topics/downloader-middleware.html
 #     http://scrapy.readthedocs.org/en/latest/topics/spider-middleware.html
 
-BOT_NAME = 'mercado'
+BOT_NAME = 'amazon'
 
-SPIDER_MODULES = ['mercado.spiders']
-NEWSPIDER_MODULE = 'mercado.spiders'
+SPIDER_MODULES = ['amazon.spiders']
+NEWSPIDER_MODULE = 'amazon.spiders'
 
-#CSV IMPORTACION
-ITEM_PIPELINES = {'mercado.pipelines.MercadoPipeline': 500,
-					'mercado.pipelines.MercadoImagenesPipeline': 600, }
-
-# Crawl responsibly by identifying yourself (and your website) on the user-agent
-#USER_AGENT = 'mercado (+http://www.yourdomain.com)'
-
+ITEM_PIPELINES = {'amazon.pipelines.AmazonPipeline' : 300,
+					'amazon.pipelines.AmazonImagenesPipeline': 600,}
 # Obey robots.txt rules
-ROBOTSTXT_OBEY = True
+#ROBOTSTXT_OBEY = True
 
 #Imagenes
-IMAGES_STORE = '/URL/RUTA/IMAGENES'
+IMAGES_STORE = '/URL/DE/TU/DIRECTORIO/imagenes'
 DOWNLOAD_DELAY = 2
+
+
+# Crawl responsibly by identifying yourself (and your website) on the user-agent
+#USER_AGENT = 'amazon (+http://www.yourdomain.com)'
 
 # Configure maximum concurrent requests performed by Scrapy (default: 16)
 #CONCURRENT_REQUESTS = 32
@@ -54,13 +53,13 @@ DOWNLOAD_DELAY = 2
 # Enable or disable spider middlewares
 # See http://scrapy.readthedocs.org/en/latest/topics/spider-middleware.html
 #SPIDER_MIDDLEWARES = {
-#    'mercado.middlewares.mercadoSpiderMiddleware': 543,
+#    'amazon.middlewares.AmazonSpiderMiddleware': 543,
 #}
 
 # Enable or disable downloader middlewares
 # See http://scrapy.readthedocs.org/en/latest/topics/downloader-middleware.html
 #DOWNLOADER_MIDDLEWARES = {
-#    'mercado.middlewares.MyCustomDownloaderMiddleware': 543,
+#    'amazon.middlewares.MyCustomDownloaderMiddleware': 543,
 #}
 
 # Enable or disable extensions
@@ -72,7 +71,7 @@ DOWNLOAD_DELAY = 2
 # Configure item pipelines
 # See http://scrapy.readthedocs.org/en/latest/topics/item-pipeline.html
 #ITEM_PIPELINES = {
-#    'mercado.pipelines.MercadoPipeline': 300,
+#    'amazon.pipelines.AmazonPipeline': 300,
 #}
 
 # Enable and configure the AutoThrottle extension (disabled by default)
